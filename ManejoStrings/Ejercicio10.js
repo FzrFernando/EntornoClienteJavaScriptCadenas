@@ -1,7 +1,16 @@
-function generarNombre3(cadena1,cadena2,cadena3){
-    if (cadena1.length < 5 || cadena2.length < 5 || cadena3.length < 5){
-        console.log("error");
+function generarNombre3(cadena1, cadena2, cadena3) {
+    // Verificar si alguna cadena tiene menos de 5 letras
+    if (cadena1.length < 5 || cadena2.length < 5 || cadena3.length < 5) {
+      return 'error';
     } else {
-        console.log(`${cadena1.substring(cadena1.length-4,cadena1.length-1)} ${cadena2.charAt(cadena2.length-4,cadena2.length-1)} ${cadena3.charAt(cadena3.length-4,cadena3.length-1)}`)
+      // Obtener las tres últimas letras de cada cadena
+      const ultimasLetras1 = cadena1.slice(-3);
+      const ultimasLetras2 = cadena2.slice(-3);
+      const ultimasLetras3 = cadena3.slice(-3);
+  
+      // Concatenar las últimas letras para formar el nuevo nombre
+      const nuevoNombre = ultimasLetras1 + ultimasLetras2 + ultimasLetras3;
+  
+      return nuevoNombre;
     }
 }
